@@ -1,34 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Type Ahead 👀</title>
-  <link rel="stylesheet" href="style.css">
-
-</head>
-<body>
-
-  <form class="search-form">
-    <input type="text" class="search" placeholder="City or State">
-    <ul class="suggestions">
-      <li>Filter for a city</li>
-      <li>or a state</li>
-    </ul>
-  </form>
-<script>
-
+/**
+ * Schnipsel DOM geladen:
+ document.addEventListener("DOMContentLoaded", event => {
+    console.log("DOM fully loaded and parsed");
+});
+ */
+document.addEventListener("DOMContentLoaded", event => {
     //aus diesem File kommen alle US Städte, ist ein json
     const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
 
     //damit die Städte gefiltert werden können, braucht man ein leeres array:
-    let cities = [];
+    const cities = [];
 
     //nun wird ein Browser API verwendet, via let prom = ... console.log (prom) Element untersuchen
     // man weiss nicht was da genau zurück kommt, unter proto json findbar: fetch(endpoint).then(blob => console.log(blob))
     fetch(endpoint)
         .then(blob => blob.json())
-        .then(data => cities = data) // funktioniert nicht mit seperatem js, wenn im HTML drin jedoch schon
+        .then(data => cities.push(...data)) // funktioniert nicht mit seperatem js, wenn im HTML drin jedoch schon -> wegen fetch???
 
-</script>
-  </body>
-</html>
+});
