@@ -71,6 +71,6 @@ progress.addEventListener('click', scrub) //9
 }) //10 nach 12 wird scrub ersetzt */
 progress.addEventListener('mousemove', (e) => mousedown && scrub(e)) // ersetzt 10, wenn mousedown = true wird scrub ausgeführt
 progress.addEventListener('mousedown', () => mousedown = true) //11
-progress.addEventListener('mouseup', () => mouseup = true) //12
+progress.addEventListener('mouseup', () => mouseup = false) //12
 
 //Button fullscreen selber machen
