@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Console Tricks!</title>
+
 </head>
 <body>
 
@@ -16,30 +17,79 @@
       p.style.color = '#BADA55';
       p.style.fontSize = '50px';
     }
+    // Debugger: z.B. im Html auf p, re-mausklick -> break on -> auswählen -> setzt breakpoint
 
     // Regular
+    console.log('Hello')
 
     // Interpolated
+    console.log('Hello I am a %s string','poor')
+    // geht nicht da variable nicht definiert ist console.log(`Hello I'm a ${variable} between backticks`)
 
     // Styled
+    console.log('%c I am some styled text', 'font-size: 30px; background: blue');
 
     // warning!
+    console.warn('warning');
 
     // Error :|
+    console.error('error');
 
     // Info
+    console.info('information'); //info - icon erscheint nicht...
 
     // Testing
+    console.assert( 1 === 1, 'you do not know 1 equal 1 is the same?')  //wird nicht angezeigt da 1===1 = true
+    console.assert( 1 === 2, 'you do not know math?')
 
-    // clearing
+    let p = document.querySelector('p')
+    console.assert(p.classList.contains('wordSomething'), "That's wrong")
+
 
     // Viewing DOM Elements
+    console.log(p)
+    console.dir(p)
+
+
+    // clearing
+    console.clear() // leert die Console ganz
 
     // Grouping together
+    dogs.forEach(dog => {
+        //console.group(`${dog.name}`);
+        console.groupCollapsed(`${dog.name}`);
+        console.log(`this is ${dog.name}`);
+        console.log(`${dog.name} is ${dog.age} years old`);
+        console.log(`${dog.name} is ${dog.age * 7} dog years old`);
+        console.groupEnd(`${dog.name}`);
+    })
 
     // counting
+    console.count('tina')
+    console.count('tina')
+    console.count('tina')
+    console.count('roberta')
+    console.count('roberta')
+    console.count('roberta')
+    console.count('roberta')
+    console.count('tina')
+    console.count('tina')
+    console.count('roberta')
+    console.count('tina')
+    console.count('tina')
+
 
     // timing
+    console.time('fetching data');
+    fetch('https://api.github.com/users/wesbos')
+        .then(data => data.json())
+        .then(data => {
+            console.timeEnd('fetching data');
+            console.log(data);
+        });
+
+    //Table
+    console.table(dogs)
 
   </script>
 </body>
