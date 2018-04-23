@@ -4,7 +4,7 @@
     console.log("DOM fully loaded and parsed");
 });
  */
-document.addEventListener("DOMContentLoaded", event => {
+
 
     const addItems = document.querySelector('.add-items');
     const itemsList = document.querySelector('.plates');
@@ -28,5 +28,5 @@ document.addEventListener("DOMContentLoaded", event => {
     }
 
     addItems.addEventListener('submit', addItem)
-});
+
 
