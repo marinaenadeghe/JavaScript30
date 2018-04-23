@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", event => {
         items.push(item);
         this.reset() // wegen Formular ist es reset
 
-        console.log(item)
+        console.log(item, items) // bei Eingabe in Console: error mit console.log kein Problem....
 
     }
 
