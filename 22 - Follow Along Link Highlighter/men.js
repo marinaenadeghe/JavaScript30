@@ -23,3 +23,6 @@ function highlightLink() {
 }
 
 triggers.forEach(a => a.addEventListener('mouseenter', highlightLink))
+
+
+// wann macht man etwas mit CSS und wann mit JS? Stimmt Prinzip immer mit CSS wenn es geht?
